@@ -1,0 +1,278 @@
+html {
+ font-size: 62.5%;
+ scale: .87;
+}
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+}
+.wrap{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+/* nav part*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    margin: 4em;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+   position: relative;
+}
+
+nav ul li a.active::before{
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -5px;
+}
+nav ul li a::before{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+/*hero section*/
+
+main{
+    display:flex;
+    gap: 8em;
+    margin-top: 11rem;
+
+}
+
+.lcol{
+    width: 45%;
+}
+.rcol{
+    flex-grow: 1;
+}
+h1{
+    font-size: 5.2rem;
+    font-family:'Playfair Display';
+    font-weight: normal;
+    margin: 0;
+}
+.sub{
+    font-size: 1.8rem;
+}
+
+.bts{
+    display: flex;
+    gap: 2em;
+    margin: 0em;
+}
+.lbts{
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color:rgb(255, 214, 152);
+    border-radius: 0.8em;
+    padding: 1em 2em;
+}
+.rbts{
+    font-size: 1.9rem;
+    text-decoration: none;
+    color: black;
+    margin-top: 2.1rem;
+    transition: .3s;
+}
+.news{
+    margin-top: 3em;
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid black;
+    border-radius: 0.8em;
+    position: relative;
+}
+
+.news::before{
+    position: absolute;
+    content: "";
+    background: url('images/confetti.svg');
+    width: 150px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+}
+p.emp{
+    font-size: 3.3rem;
+    font-weight: 200;
+    margin: 0;
+    line-height: 100%;
+    transition: .3s;
+}
+p.cus{
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.rcol{
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+    'left .'
+    'left .';
+
+}
+.c{
+    background-color: rgb(255, 255, 255);
+    border-radius: .8em;
+    padding: 1.1em;
+    display: flex;
+    align-items: end;
+    transition: 800ms;
+}
+.card1{
+    grid-area: left;
+    background: url("images/clothing1.jpg");
+    background-size: 150%;
+    position: relative;
+    
+}
+.card1:before{
+    position: absolute;
+    content: "";
+    background: url('images/tag.svg') no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 100;
+    left: -50px;
+    pointer-events: none;
+    transition: 800ms;
+}
+.card2{
+    background: url("images/clothing2.jpg");
+    background-size: 150%;
+}
+.card3{
+    background: url("images/clothing3.jpg");
+    background-size: 150%;
+}
+.pdetails{
+    padding: 2em;
+    background-color: white;
+    border-radius: .8em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    transition: 800ms;
+}
+.pdetails a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem
+}
+.pdetails p{
+    font-size: 1.4rem;
+    margin: 0;
+}
+.pprice{
+    font-size: 1.8rem;
+    margin:0;
+}
+
+/* Microinteractions*/
+
+nav ul li a:hover::before{
+    width: 90%;
+}
+
+.lbts:hover{
+    background-color: blanchedalmond;
+}
+
+.rbts:hover{
+    transform: translateX(10px);
+    text-decoration:underline ;
+}
+
+.c:hover{
+    background-size: 170%;
+}
+.c:hover .pdetails{
+    transform: translateY(-30px);
+}
+
+/* Intro animations*/
+
+.overlay{
+    position: absolute;
+    z-index: 999;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    animation: reveal 900ms ease-in forwards;
+    transform-origin: bottom;
+}
+
+@keyframes reveal {
+    from
+    {
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
+
+.rcol{
+    animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growIn
+{
+    to{
+        transform: scale(1);
+    }
+}
+.lcol{
+    animation: growInn 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(.4);
+}
+
+@keyframes growInn
+{
+    to{
+        transform: scale(1);
+    }
+}
+header{
+    animation: growInnn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    transform: scale(1.2);
+}
+
+@keyframes growInnn
+{
+    to{
+        transform: scale(1);
+    }
+}
